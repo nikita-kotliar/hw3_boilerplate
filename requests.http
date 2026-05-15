@@ -1,0 +1,82 @@
+@baseUrl = http://localhost:3000
+
+###
+GET {{baseUrl}}/announcements
+
+###
+
+###
+GET {{baseUrl}}/announcements?search=фортепіано
+
+###
+
+###
+GET {{baseUrl}}/announcements?sort=oldest&page=1
+
+###
+
+###
+GET {{baseUrl}}/announcements/1
+
+###
+
+###
+GET {{baseUrl}}/announcements/99999
+
+###
+
+###
+POST {{baseUrl}}/announcements
+Content-Type: application/json
+
+{
+  "title": "Продам фортепіано Yamaha",
+  "description": "Відмінний стан, майже не використовувалось. Ідеально підходить для навчання та гри.",
+  "price": 55000,
+  "category": "sale",
+  "contactInfo": "0976731529"
+}
+
+###
+
+###
+POST {{baseUrl}}/announcements
+Content-Type: application/json
+
+{
+  "title": "--",
+  "description": "Коротко",
+  "price": -10,
+  "category": "unknown",
+  "contactInfo": "ok"
+}
+
+###
+
+###
+PATCH {{baseUrl}}/announcements/1
+Content-Type: application/json
+
+{
+  "price": 40000
+}
+
+###
+
+###
+PATCH {{baseUrl}}/announcements/99999
+Content-Type: application/json
+
+{
+  "price": 40000
+}
+
+###
+
+###
+DELETE {{baseUrl}}/announcements/1
+
+###
+
+###
+DELETE {{baseUrl}}/announcements/99999
